@@ -5,38 +5,41 @@
     <link rel="stylesheet" href='/static/css/interface.css'>
 </head>
 <body>
-<h3 class = "Dis"></h3>
-<h1 class = "Dis"></h1>
 
-<div class="ButtonGrid center">
+<h3 class = "Dis">{{SecondDis}}</h3>
+<h1 class = "Dis">{{MainDis}}</h1>
 
-    <button id = '7' class="button-4" role="button">7</button>
-    <button id = '8' class="button-4" role="button">8</button>
-    <button id = '9' class="button-4" role="button">9</button>
-    <button id = '/' class="button-4" role="button">/</button>
-    <button class="button-4" role="button">Del</button>
-    <button class="button-4" role="button">C</button>
+    <form action="/" method="POST">
+        <div class="ButtonGrid center">
 
-    <button id = '4' class="button-4" role="button">4</button>
-    <button id = '5' class="button-4" role="button">5</button>
-    <button id = '6' class="button-4" role="button">6</button>
-    <button id = 'X' class="button-4" role="button">X</button>
-    <button class="button-4" role="button">(</button>
-    <button class="button-4" role="button">)</button>
+        <input class="button-4" type="submit" name="submit_button" value="7">
+        <input class="button-4" type="submit" name="submit_button" value="8">
+        <input class="button-4" type="submit" name="submit_button" value="9">
+        <input class="button-4" type="submit" name="submit_button" value="/">
+        <input class="button-4" type="submit" name="submit_button" value="Del">
+        <input class="button-4" type="submit" name="submit_button" value="C">
 
-    <button id = '1' class="button-4" role="button">1</button>
-    <button id = '2' class="button-4" role="button">2</button>
-    <button id = '3' class="button-4" role="button">3</button>
-    <button class="button-4" role="button">-</button>
-    <button class="button-4" role="button">x²</button>
-    <button class="button-4" role="button">√</button>
+        <input class="button-4" type="submit" name="submit_button" value="4">
+        <input class="button-4" type="submit" name="submit_button" value="5">
+        <input class="button-4" type="submit" name="submit_button" value="6">
+        <input class="button-4" type="submit" name="submit_button" value="X">
+        <input class="button-4" type="submit" name="submit_button" value="(">
+        <input class="button-4" type="submit" name="submit_button" value=")">
 
-    <button id = '0' class="button-4" role="button">0</button>
-    <button class="button-4" role="button">.</button>
-    <button class="add button-4" role="button">+</button>
-    <button class="equal button-4" role="button">=</button>
+        <input class="button-4" type="submit" name="submit_button" value="1">
+        <input class="button-4" type="submit" name="submit_button" value="2">
+        <input class="button-4" type="submit" name="submit_button" value="3">
+        <input class="button-4" type="submit" name="submit_button" value="-">
+        <input class="button-4" type="submit" name="submit_button" value="x²">
+        <input class="button-4" type="submit" name="submit_button" value="√">
 
-</div>
+        <input class="button-4" type="submit" name="submit_button" value="0">
+        <input class="button-4" type="submit" name="submit_button" value=".">
+        <input class="add button-4" type="submit" name="submit_button" value="+">
+        <input class="equal button-4" type="submit" name="submit_button" value="=">
+
+        </div>
+    </form>
 
 </body>
 </html>
