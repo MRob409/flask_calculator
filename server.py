@@ -233,8 +233,6 @@ def EvalODMAS(li):
 
 
     i = 0
-    z = 0
-    n2 = 0
 
     print('li: ' + ''.join(li))
 
@@ -256,7 +254,7 @@ def EvalODMAS(li):
 
             # finds n2
             # loop starting from z, will break if item == +, -, /, X, ², √
-            while z < len(li) - 1:
+            while z < len(li):
                 if (li[z] == '+') or (li[z] == '-') or (li[z] == '/') or (li[z] == 'X') or (li[z] == '²') or (
                         li[z] == '√'):
                     break
@@ -291,8 +289,6 @@ def EvalODMAS(li):
         i += 1
 
     i = 0
-    z = 0
-    n2 = 0
 
     # Solves each x²
     while i < len(li):
@@ -330,10 +326,216 @@ def EvalODMAS(li):
         i += 1
 
     i = 0
-    z = 0
-    n2 = 0
 
+    # solves each div/mul
+    while i < len(li):
 
+        if li[i] == '/':
+            print('division')
+
+            z = i-1
+
+            # finds n1
+            while z >= 0:
+                if (li[z] == '+') or (li[z] == '-') or (li[z] == '/') or (li[z] == 'X') or (li[z] == '²') or (
+                        li[z] == '√'):
+                    break
+                else:
+                    z -= 1
+
+            n1 = float(''.join(li[z + 1:i]))
+            print('n1: ' + str(n1))
+
+            x = z+1
+            z = i+1
+
+            # accounts for -n2
+            if li[i+1] == '-':
+                z = i+2
+
+            # finds n2
+            # loop starting from z, will break if item == +, -, /, X, ², √
+            while z < len(li):
+                if (li[z] == '+') or (li[z] == '-') or (li[z] == '/') or (li[z] == 'X') or (li[z] == '²') or (
+                        li[z] == '√'):
+                    break
+                else:
+                    z += 1
+
+            # n2
+            n2 = float(''.join(li[i+1:z]))
+            print('n2: ' + str(n2))
+
+            result = n1/n2
+            print('result: ' + str(result))
+
+            li = li[:x] + [str(result)] + li[z:]
+            print(li)
+
+            # resets i to 0 so can recheck the array
+            i = 0
+
+            # signals resulted
+            resulted = True
+            print('Resulted: ' + str(resulted))
+
+        elif li[i] == 'X':
+            print('multiplication')
+
+            z = i - 1
+
+            # finds n1
+            while z >= 0:
+                if (li[z] == '+') or (li[z] == '-') or (li[z] == '/') or (li[z] == 'X') or (li[z] == '²') or (
+                        li[z] == '√'):
+                    break
+                else:
+                    z -= 1
+
+            n1 = float(''.join(li[z + 1:i]))
+            print('n1: ' + str(n1))
+
+            x = z + 1
+            z = i + 1
+
+            # accounts for -n2
+            if li[i + 1] == '-':
+                z = i + 2
+
+            # finds n2
+            # loop starting from z, will break if item == +, -, /, X, ², √
+            while z < len(li):
+                if (li[z] == '+') or (li[z] == '-') or (li[z] == '/') or (li[z] == 'X') or (li[z] == '²') or (
+                        li[z] == '√'):
+                    break
+                else:
+                    z += 1
+
+            # n2
+            n2 = float(''.join(li[i + 1:z]))
+            print('n2: ' + str(n2))
+
+            result = n1 * n2
+            print('result: ' + str(result))
+
+            li = li[:x] + [str(result)] + li[z:]
+            print(li)
+
+            # resets i to 0 so can recheck the array
+            i = 0
+
+            # signals resulted
+            resulted = True
+            print('Resulted: ' + str(resulted))
+
+        # increments loop
+        i += 1
+
+    i = 0
+
+    # solves each addition / subtraction
+    while i < len(li):
+
+        if li[i] == '+':
+            print('addition')
+
+            z = i - 1
+
+            # finds n1
+            while z >= 0:
+                if (li[z] == '+') or (li[z] == '-') or (li[z] == '/') or (li[z] == 'X') or (li[z] == '²') or (
+                        li[z] == '√'):
+                    break
+                else:
+                    z -= 1
+
+            n1 = float(''.join(li[z + 1:i]))
+            print('n1: ' + str(n1))
+
+            x = z + 1
+            z = i + 1
+
+            # accounts for -n2
+            if li[i + 1] == '-':
+                z = i + 2
+
+            # finds n2
+            # loop starting from z, will break if item == +, -, /, X, ², √
+            while z < len(li):
+                if (li[z] == '+') or (li[z] == '-') or (li[z] == '/') or (li[z] == 'X') or (li[z] == '²') or (
+                        li[z] == '√'):
+                    break
+                else:
+                    z += 1
+
+            # n2
+            n2 = float(''.join(li[i + 1:z]))
+            print('n2: ' + str(n2))
+
+            result = n1 + n2
+            print('result: ' + str(result))
+
+            li = li[:x] + [str(result)] + li[z:]
+            print(li)
+
+            # resets i to 0 so can recheck the array
+            i = 0
+
+            # signals resulted
+            resulted = True
+            print('Resulted: ' + str(resulted))
+
+        elif li[i] == '-':
+            print('addition')
+
+            z = i - 1
+
+            # finds n1
+            while z >= 0:
+                if (li[z] == '+') or (li[z] == '-') or (li[z] == '/') or (li[z] == 'X') or (li[z] == '²') or (
+                        li[z] == '√'):
+                    break
+                else:
+                    z -= 1
+
+            n1 = float(''.join(li[z + 1:i]))
+            print('n1: ' + str(n1))
+
+            x = z + 1
+            z = i + 1
+
+            # accounts for -n2
+            if li[i + 1] == '-':
+                z = i + 2
+
+            # finds n2
+            # loop starting from z, will break if item == +, -, /, X, ², √
+            while z < len(li):
+                if (li[z] == '+') or (li[z] == '-') or (li[z] == '/') or (li[z] == 'X') or (li[z] == '²') or (
+                        li[z] == '√'):
+                    break
+                else:
+                    z += 1
+
+            # n2
+            n2 = float(''.join(li[i + 1:z]))
+            print('n2: ' + str(n2))
+
+            result = n1 - n2
+            print('result: ' + str(result))
+
+            li = li[:x] + [str(result)] + li[z:]
+            print(li)
+
+            # resets i to 0 so can recheck the array
+            i = 0
+
+            # signals resulted
+            resulted = True
+            print('Resulted: ' + str(resulted))
+
+        # increments loop
+        i += 1
 
 
 def MainDisplay():
